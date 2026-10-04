@@ -1,0 +1,527 @@
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+}
+
+:root {
+--background: #f5f7fb;
+--card: #ffffff;
+--text: #111827;
+--secondary-text: #64748b;
+--accent: #6366f1;
+--accent2: #8b5cf6;
+--nav: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode {
+--background: #070711;
+--card: #11111d;
+--text: #f8fafc;
+--secondary-text: #94a3b8;
+--accent: #818cf8;
+--accent2: #a78bfa;
+--nav: rgba(7, 7, 17, 0.8);
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: var(--background);
+color: var(--text);
+transition: background 0.4s, color 0.4s;
+}
+
+/* Navigation */
+
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 18px 8%;
+
+background: var(--nav);
+backdrop-filter: blur(15px);
+
+border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+
+
+}
+
+.logo {
+font-size: 25px;
+font-weight: bold;
+color: var(--accent);
+}
+
+.nav-links {
+display: flex;
+gap: 25px;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--text);
+font-size: 14px;
+
+transition: 0.3s;
+
+
+}
+
+.nav-links a:hover {
+color: var(--accent);
+}
+
+.theme-btn {
+border: none;
+background: var(--card);
+padding: 10px;
+border-radius: 50%;
+cursor: pointer;
+font-size: 17px;
+}
+
+/* Hero */
+
+.hero {
+min-height: 100vh;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 120px 10% 80px;
+
+gap: 60px;
+
+
+}
+
+.hero-text {
+max-width: 650px;
+
+animation: slideLeft 1s ease;
+
+
+}
+
+.intro {
+color: var(--accent);
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.hero h1 {
+font-size: clamp(45px, 7vw, 80px);
+line-height: 1.05;
+}
+
+.hero h1 span {
+background: linear-gradient(
+90deg,
+var(--accent),
+var(--accent2)
+);
+
+-webkit-background-clip: text;
+color: transparent;
+
+
+}
+
+.hero h2 {
+margin-top: 15px;
+color: var(--secondary-text);
+font-size: 22px;
+}
+
+.hero-description {
+margin-top: 20px;
+line-height: 1.8;
+color: var(--secondary-text);
+max-width: 550px;
+}
+
+/* Buttons */
+
+.buttons {
+display: flex;
+gap: 15px;
+margin-top: 30px;
+flex-wrap: wrap;
+}
+
+.btn {
+padding: 13px 22px;
+border-radius: 30px;
+text-decoration: none;
+transition: 0.3s;
+}
+
+.primary {
+color: white;
+background: linear-gradient(
+90deg,
+var(--accent),
+var(--accent2)
+);
+}
+
+.secondary {
+color: var(--text);
+border: 1px solid var(--accent);
+}
+
+.btn:hover {
+transform: translateY(-4px);
+}
+
+/* Profile */
+
+.profile-container {
+position: relative;
+
+width: 300px;
+height: 300px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+animation: floating 4s ease-in-out infinite;
+
+
+}
+
+.profile-glow {
+position: absolute;
+
+width: 300px;
+height: 300px;
+
+background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent2)
+);
+
+border-radius: 50%;
+
+filter: blur(35px);
+opacity: 0.5;
+
+
+}
+
+.profile-image {
+position: relative;
+
+width: 260px;
+height: 260px;
+
+object-fit: cover;
+
+border-radius: 50%;
+
+border: 5px solid var(--card);
+
+
+}
+
+/* Sections */
+
+.section {
+max-width: 1000px;
+margin: auto;
+
+padding: 100px 30px;
+
+
+}
+
+.section-label {
+color: var(--accent);
+font-size: 13px;
+font-weight: bold;
+letter-spacing: 3px;
+}
+
+.section h2 {
+font-size: 40px;
+margin: 10px 0 35px;
+}
+
+/* Cards */
+
+.about-card,
+.education-card,
+.skill-card,
+.hobby-card {
+background: var(--card);
+
+border: 1px solid rgba(128, 128, 128, 0.15);
+
+border-radius: 18px;
+
+padding: 30px;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+transition: 0.3s;
+
+
+}
+
+.about-card p {
+color: var(--secondary-text);
+line-height: 1.8;
+margin-bottom: 15px;
+}
+
+.about-card strong {
+color: var(--accent);
+}
+
+/* Education */
+
+.education-card {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+.education-icon {
+font-size: 40px;
+}
+
+.education-card h3 {
+margin-bottom: 8px;
+}
+
+.education-card p {
+color: var(--secondary-text);
+}
+
+.education-card span {
+display: inline-block;
+margin-top: 10px;
+
+color: var(--accent);
+font-size: 13px;
+
+
+}
+
+/* Skills */
+
+.skills-container,
+.hobbies-container {
+display: grid;
+
+grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+gap: 20px;
+
+
+}
+
+.skill-card:hover,
+.hobby-card:hover,
+.about-card:hover,
+.education-card:hover {
+transform: translateY(-8px);
+
+border-color: var(--accent);
+
+
+}
+
+.skill-icon {
+display: inline-flex;
+
+width: 55px;
+height: 55px;
+
+justify-content: center;
+align-items: center;
+
+background: linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent2)
+);
+
+color: white;
+
+border-radius: 15px;
+
+font-weight: bold;
+margin-bottom: 20px;
+
+
+}
+
+.skill-card p,
+.hobby-card p {
+color: var(--secondary-text);
+margin-top: 8px;
+}
+
+/* Hobbies */
+
+.hobby-card span {
+font-size: 40px;
+}
+
+.hobby-card h3 {
+margin-top: 15px;
+}
+
+/* Contact */
+
+.contact-section {
+text-align: center;
+}
+
+.contact-section p {
+color: var(--secondary-text);
+margin-bottom: 25px;
+}
+
+.instagram-btn {
+display: inline-block;
+
+padding: 14px 25px;
+
+border-radius: 30px;
+
+text-decoration: none;
+
+color: white;
+
+background: linear-gradient(
+    45deg,
+    #feda75,
+    #d62976,
+    #4f5bd5
+);
+
+transition: 0.3s;
+
+
+}
+
+.instagram-btn:hover {
+transform: scale(1.05);
+}
+
+/* Footer */
+
+footer {
+text-align: center;
+
+padding: 40px 20px;
+
+color: var(--secondary-text);
+
+border-top: 1px solid rgba(128, 128, 128, 0.15);
+
+
+}
+
+footer p {
+margin: 5px;
+}
+
+/* Animations */
+
+@keyframes floating {
+
+0%, 100% {
+    transform: translateY(0);
+}
+
+50% {
+    transform: translateY(-15px);
+}
+
+
+}
+
+@keyframes slideLeft {
+
+from {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+.navbar {
+    padding: 15px 5%;
+}
+
+.nav-links {
+    display: none;
+}
+
+.hero {
+    flex-direction: column;
+    text-align: center;
+
+    padding-top: 140px;
+}
+
+.hero-description {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    justify-content: center;
+}
+
+.profile-container {
+    width: 240px;
+    height: 240px;
+}
+
+.profile-glow {
+    width: 240px;
+    height: 240px;
+}
+
+.profile-image {
+    width: 210px;
+    height: 210px;
+}
+
+.section {
+    padding: 70px 20px;
+}
+
+.section h2 {
+    font-size: 32px;
+}
+
+
+}
